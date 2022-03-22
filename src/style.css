@@ -13,7 +13,7 @@ body {
   height: 100vh;
 }
 
-.todo-container{
+.todo-container {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   height: 70%;
@@ -22,10 +22,10 @@ body {
   background-color: white;
   border: 1px solid #000;
   box-shadow: 2px 5px grey;
-  
 }
 
-.heading, .new-task {
+.heading,
+.new-task {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -61,7 +61,6 @@ input:focus {
   flex-direction: row;
   grid-template-columns: auto 1fr auto;
   border-bottom: 1px solid #000;
-  
 }
 
 .options {
@@ -71,9 +70,5 @@ input:focus {
 #clear {
   text-align: center;
   padding: 1em;
-  background-color: grey; 
+  background-color: grey;
 }
-
-
-
-
