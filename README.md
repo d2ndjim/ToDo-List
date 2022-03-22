@@ -79,11 +79,20 @@ npm init -y
 npm install --save-dev hint@6.x
 ```
 
-##### For validation detection using Webhint Run
+##### For validation detection using Webhint, Run
 
 ```
 npx hint .
 ```
+
+##### To Compile and See a live Version,  Run
+```
+npm run build 
+```
+```
+npm start
+```
+
 
 ##### from parent source directory
 
