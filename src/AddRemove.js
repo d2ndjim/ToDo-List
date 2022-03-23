@@ -43,7 +43,7 @@ class List {
 
   saveData() {
     for (let i = 0; i < this.list.length; i += 1) {
-      this.list[i].index = i + 1 ;
+      this.list[i].index = i + 1;
     }
     this.list.sort((a, b) => {
       if (a.index < b.index) {
