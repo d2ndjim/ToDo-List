@@ -1,6 +1,6 @@
-class List {
+class TaskList {
   constructor() {
-    this.list = JSON.parse(localStorage.getItem('todo-list'));
+    this.list = JSON.parse(localStorage.getItem("todo-list"));
     if (!this.list) {
       this.list = [];
     }
@@ -9,8 +9,8 @@ class List {
 
   showList() {
     this.saveData();
-    const listSection = document.getElementById('list-items');
-    listSection.innerHTML = '';
+    const listSection = document.getElementById("list-items");
+    listSection.innerHTML = "";
     this.list.forEach((activity) => {
       let activityItem = `<li class ="d-flex s-between list-item" id ="item-data-${activity.index}"> `;
       if (activity.completed) {
@@ -38,12 +38,12 @@ class List {
       `;
       listSection.innerHTML += activityItem;
     });
-    this.activityActions();
+    this.taskActions();
   }
 
   saveData() {
     for (let i = 0; i < this.list.length; i += 1) {
-      this.list[i].index = i + 1;
+      this.list[i].index = i;
     }
     this.list.sort((a, b) => {
       if (a.index < b.index) {
@@ -54,10 +54,10 @@ class List {
       }
       return 0;
     });
-    localStorage.setItem('todo-list', JSON.stringify(this.list));
+    localStorage.setItem("todo-list", JSON.stringify(this.list));
   }
 
-  addActivity(activity) {
+  addTask(activity) {
     if (activity.length > 0) {
       const newActivity = {
         description: activity,
@@ -70,35 +70,64 @@ class List {
     }
   }
 
-  deleteCompleted(index) {
-    this.list.splice(index - 1, 1);
+  deleteTask(index) {
+    this.list.splice(index, 1);
     this.showList();
   }
 
-  editActivity(index, description) {
+  refresh() {
+    localStorage.clear();
+    this.list = [];
+    this.showList();
+  }
+
+  updateStatus(index) {
+    if (this.list[index].completed === true) {
+      this.list[index].completed = false;
+    } else if (this.list[index].completed === false) {
+      this.list[index].completed = true;
+    }
+    this.showList();
+  }
+
+  clearCompleted() {
+    this.list = this.list.filter((activity) => activity.completed === false);
+    this.showList();
+  }
+
+  editTask(index, description) {
     this.list[index].description = description;
     this.saveData();
   }
 
-  activityActions() {
-    const deleteActivity = document.querySelectorAll('.delete-activity');
+  taskActions() {
+    const deleteActivity = document.querySelectorAll(".delete-activity");
     deleteActivity.forEach((activity) => {
-      activity.addEventListener('click', () => {
-        this.deleteCompleted(activity.getAttribute('data'));
+      activity.addEventListener("click", () => {
+        this.deleteTask(activity.getAttribute("data"));
       });
     });
 
-    const editedActivity = document.querySelectorAll('.activity');
-    if (editedActivity) {
-      editedActivity.forEach((activity) => {
-        activity.addEventListener('input', (e) => {
+    const checkbox = document.querySelectorAll(".update-status");
+    if (checkbox !== null) {
+      checkbox.forEach((box) => {
+        box.addEventListener("click", () => {
+          this.updateStatus(box.getAttribute("data"));
+        });
+      });
+    }
+
+    const editedTask = document.querySelectorAll(".activity");
+    if (editedTask) {
+      editedTask.forEach((activity) => {
+        activity.addEventListener("input", (e) => {
           const description = e.target.innerText;
-          const index = e.target.getAttribute('data');
-          this.editActivity(index, description);
+          const index = e.target.getAttribute("data");
+          this.editTask(index, description);
         });
       });
     }
   }
 }
 
-export default List;
+export default TaskList;
