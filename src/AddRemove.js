@@ -43,7 +43,7 @@ class List {
 
   saveData() {
     for (let i = 0; i < this.list.length; i += 1) {
-      this.list[i].index = i;
+      this.list[i].index = i + 1 ;
     }
     this.list.sort((a, b) => {
       if (a.index < b.index) {
@@ -71,7 +71,7 @@ class List {
   }
 
   deleteCompleted(index) {
-    this.list.splice(index, 1);
+    this.list.splice(index - 1, 1);
     this.showList();
   }
 
