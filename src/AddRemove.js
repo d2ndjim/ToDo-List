@@ -1,6 +1,6 @@
 class List {
   constructor() {
-    this.list = JSON.parse(localStorage.getItem("todo-list"));
+    this.list = JSON.parse(localStorage.getItem('todo-list'));
     if (!this.list) {
       this.list = [];
     }
@@ -9,8 +9,8 @@ class List {
 
   showList() {
     this.saveData();
-    const listSection = document.getElementById("list-items");
-    listSection.innerHTML = "";
+    const listSection = document.getElementById('list-items');
+    listSection.innerHTML = '';
     this.list.forEach((activity) => {
       let activityItem = `<li class ="d-flex s-between list-item" id ="item-data-${activity.index}"> `;
       if (activity.completed) {
@@ -54,7 +54,7 @@ class List {
       }
       return 0;
     });
-    localStorage.setItem("todo-list", JSON.stringify(this.list));
+    localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
   addActivity(activity) {
@@ -81,19 +81,19 @@ class List {
   }
 
   activityActions() {
-    const deleteActivity = document.querySelectorAll(".delete-activity");
+    const deleteActivity = document.querySelectorAll('.delete-activity');
     deleteActivity.forEach((activity) => {
-      activity.addEventListener("click", () => {
-        this.deleteCompleted(activity.getAttribute("data"));
+      activity.addEventListener('click', () => {
+        this.deleteCompleted(activity.getAttribute('data'));
       });
     });
 
-    const editedActivity = document.querySelectorAll(".activity");
+    const editedActivity = document.querySelectorAll('.activity');
     if (editedActivity) {
       editedActivity.forEach((activity) => {
-        activity.addEventListener("input", (e) => {
+        activity.addEventListener('input', (e) => {
           const description = e.target.innerText;
-          const index = e.target.getAttribute("data");
+          const index = e.target.getAttribute('data');
           this.editActivity(index, description);
         });
       });
@@ -101,4 +101,4 @@ class List {
   }
 }
 
-export default List
+export default List;
