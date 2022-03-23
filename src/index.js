@@ -1,5 +1,5 @@
 import './style.css';
-import TaskList from "./task.js";
+import TaskList from './task.js';
 
 const tasks = new TaskList();
 
@@ -10,11 +10,10 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
   e.target.reset();
 });
 
-document.querySelector("#delete-all").addEventListener("click", () => {
+document.querySelector('#delete-all').addEventListener('click', () => {
   tasks.refresh();
 });
 
-
-document.querySelector(".clear-completed").addEventListener("click", () => {
+document.querySelector('.clear-completed').addEventListener('click', () => {
   tasks.clearCompleted();
 });

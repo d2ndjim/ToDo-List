@@ -1,6 +1,6 @@
 class TaskList {
   constructor() {
-    this.list = JSON.parse(localStorage.getItem("todo-list"));
+    this.list = JSON.parse(localStorage.getItem('todo-list'));
     if (!this.list) {
       this.list = [];
     }
@@ -9,8 +9,8 @@ class TaskList {
 
   showList() {
     this.saveData();
-    const listSection = document.getElementById("list-items");
-    listSection.innerHTML = "";
+    const listSection = document.getElementById('list-items');
+    listSection.innerHTML = '';
     this.list.forEach((activity) => {
       let activityItem = `<li class ="d-flex s-between list-item" id ="item-data-${activity.index}"> `;
       if (activity.completed) {
@@ -54,7 +54,7 @@ class TaskList {
       }
       return 0;
     });
-    localStorage.setItem("todo-list", JSON.stringify(this.list));
+    localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
   addTask(activity) {
@@ -101,28 +101,28 @@ class TaskList {
   }
 
   taskActions() {
-    const deleteActivity = document.querySelectorAll(".delete-activity");
+    const deleteActivity = document.querySelectorAll('.delete-activity');
     deleteActivity.forEach((activity) => {
-      activity.addEventListener("click", () => {
-        this.deleteTask(activity.getAttribute("data"));
+      activity.addEventListener('click', () => {
+        this.deleteTask(activity.getAttribute('data'));
       });
     });
 
-    const checkbox = document.querySelectorAll(".update-status");
+    const checkbox = document.querySelectorAll('.update-status');
     if (checkbox !== null) {
       checkbox.forEach((box) => {
-        box.addEventListener("click", () => {
-          this.updateStatus(box.getAttribute("data"));
+        box.addEventListener('click', () => {
+          this.updateStatus(box.getAttribute('data'));
         });
       });
     }
 
-    const editedTask = document.querySelectorAll(".activity");
+    const editedTask = document.querySelectorAll('.activity');
     if (editedTask) {
       editedTask.forEach((activity) => {
-        activity.addEventListener("input", (e) => {
+        activity.addEventListener('input', (e) => {
           const description = e.target.innerText;
-          const index = e.target.getAttribute("data");
+          const index = e.target.getAttribute('data');
           this.editTask(index, description);
         });
       });
