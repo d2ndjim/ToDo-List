@@ -1,8 +1,8 @@
 # To-Do List | MODULE-II
 
-> This is a project being built in the second module of curriculum at microverse. it's an application that helps to keep track of the completion and updating of a todo list
+> A single page app designed to help users keep track of their to-do list. Users can add taks, remove tasks, mark tasks as completed, and clear tasks
 
-The goal here is to Build an application with add and remove feature from scratch using JavaScripts. click [here]() to see deployed live version
+click [here]() to see deployed live version
 
 ### Features implemented so far are:
 
