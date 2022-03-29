@@ -23,26 +23,25 @@ document.body.innerHTML = `<section class="d-flex cols todo-list">
     </section>`;
 
 describe('add and remove', () => {
-
-  //test for add task method
+  // test for add task method
   window.localStorage = Storage.prototype;
   test('Add task', () => {
     const todoList = new TaskList();
     todoList.addTask('Test');
     expect(todoList.list).toHaveLength(1);
-    //local storage test
+    // local storage test
     const storage = JSON.parse(localStorage.getItem('todo-list'));
     expect(storage).not.toBe(null);
     expect(localStorage).toHaveLength(1);
   });
 
   test('remove', () => {
-    //test for remove task
+    // test for remove task
     const removeTask = new TaskList();
     removeTask.refresh();
     removeTask.addTask('test');
     removeTask.addTask('test');
-    removeTask.addTask("test");
+    removeTask.addTask('test');
     removeTask.deleteTask(1);
     expect(removeTask.list).toHaveLength(2);
   });
@@ -51,8 +50,8 @@ describe('add and remove', () => {
 describe('update status', () => {
   test('update task', () => {
     const updateList = new TaskList();
-    updateList.addTask("Test");
+    updateList.addTask('Test');
     updateList.updateStatus(1);
     expect(updateList.list[1].completed).toBe(true);
-  })
-})
+  });
+});
