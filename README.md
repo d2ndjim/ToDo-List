@@ -92,6 +92,11 @@ npm run build
 ```
 npm start
 ```
+##### To run and see test file, Run
+
+```
+npm run test
+```
 
 
 ##### from parent source directory
