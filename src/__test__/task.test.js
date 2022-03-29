@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import TaskList from "../task.js";
+import TaskList from '../task.js';
 
 document.body.innerHTML = `<section class="d-flex cols todo-list">
       <header class="header d-flex s-between">
@@ -27,15 +27,12 @@ describe('add and remove', () => {
   test('Add task', () => {
     const todoList = new TaskList();
     todoList.addTask('Test');
-    expect(todoList.list).toHaveLength(1)
+    expect(todoList.list).toHaveLength(1);
 
-    const storage = JSON.parse(localStorage.getItem("todo-list"));
+    const storage = JSON.parse(localStorage.getItem('todo-list'));
     expect(storage).not.toBe(null);
     expect(localStorage).toHaveLength(1);
-
-  })
-
-
+  });
 
   test('remove', () => {
     const removeTask = new TaskList();
@@ -46,14 +43,5 @@ describe('add and remove', () => {
     expect(removeTask.list).toHaveLength(2);
     removeTask.refresh();
     expect(removeTask.list).toHaveLength(0);
-
-
-
-  })
-
-
-
-
-
-
-})
+  });
+});
