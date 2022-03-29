@@ -55,15 +55,15 @@ describe('update status', () => {
     expect(updateList.list[1].completed).toBe(true);
   });
 
-  test("clear all completed", () => {
+  test('clear all completed', () => {
     const updateList = new TaskList();
     updateList.clearCompleted();
     expect(updateList.list).toHaveLength(2);
   });
 
-  test("edit task", () => {
+  test('edit task', () => {
     const updateList = new TaskList();
-    updateList.editTask(1, "Testing");
+    updateList.editTask(1, 'Testing');
     expect(updateList.list[1].description).toMatch(/Testing/);
   });
 });
