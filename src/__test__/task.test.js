@@ -32,8 +32,28 @@ describe('add and remove', () => {
     const storage = JSON.parse(localStorage.getItem("todo-list"));
     expect(storage).not.toBe(null);
     expect(localStorage).toHaveLength(1);
+
   })
 
-  
-  
+
+
+  test('remove', () => {
+    const removeTask = new TaskList();
+
+    removeTask.addTask('test');
+    removeTask.addTask('test');
+    removeTask.deleteTask(1);
+    expect(removeTask.list).toHaveLength(2);
+    removeTask.refresh();
+    expect(removeTask.list).toHaveLength(0);
+
+
+
+  })
+
+
+
+
+
+
 })
