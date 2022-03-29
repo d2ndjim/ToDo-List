@@ -92,7 +92,7 @@ npm run build
 ```
 npm start
 ```
-##### To run and see test file, Run
+##### To run tests and see test file, Run
 
 ```
 npm run test

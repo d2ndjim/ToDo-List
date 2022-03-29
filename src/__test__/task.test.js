@@ -54,4 +54,16 @@ describe('update status', () => {
     updateList.updateStatus(1);
     expect(updateList.list[1].completed).toBe(true);
   });
+
+  test("clear all completed", () => {
+    const updateList = new TaskList();
+    updateList.clearCompleted();
+    expect(updateList.list).toHaveLength(2);
+  });
+
+  test("edit task", () => {
+    const updateList = new TaskList();
+    updateList.editTask(1, "Testing");
+    expect(updateList.list[1].description).toMatch(/Testing/);
+  });
 });
