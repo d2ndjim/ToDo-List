@@ -108,9 +108,3 @@ All source code files are licensed under the permissive zlib license
 
 ## Author
 👤 **Lekan Jimoh** -[github](https://github.com/d2ndjim), [twitter](https://twitter.com/d2ndjim_), [Linkedin](https://linkedin.com/in/lekanj)
-
-👤 **Monika**
-
-- GitHub: [GitHub](https://github.com/monika-soam)
-- Twitter: @monikasoam
-- LinkedIn: [LinkedIn](linkedin.com/in/monika-soam-✓-16b59925)
