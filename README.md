@@ -2,7 +2,11 @@
 
 > This is a project being built in the second module of curriculum at microverse. it's an application that helps to keep track of the completion and updating of a todo list
 
-The goal here is to Build an application with add and remove feature from scratch using JavaScripts. click [here](https://d2ndjim.github.io/ToDo-List/) to see deployed live version
+![image](https://user-images.githubusercontent.com/73438276/198065117-7f54c5b6-b50b-4742-baac-6182693e8dfd.png)
+
+The goal here is to Build an application with add and remove feature from scratch using JavaScript. 
+
+click [here](https://d2ndjim.github.io/ToDo-List/) to see deployed live version
 
 ### Features implemented so far are:
 
